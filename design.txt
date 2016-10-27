@@ -1,0 +1,15 @@
+DESIGN
+	Engine
+	Map
+		The macguffin. This tells you where everything in the the dungeon is. 
+	Scene
+		Death
+			What happens if you choose the incorrect action. 
+		CentralCorridor
+			The beginning of the dungeon. Most filled with jail cells, with dead decaying corpses in them. I'm not sure if I want to add a bad guy, but I think it should have some kind of obstacle. 
+		WizardsStudy
+			This the where the old wizard kept the key to the door to The Deep. It is a small sapphire hidden in the bookcase. Searching the bookcase find the sapphire, but searching the desk starts off a chain reaction of potions. 
+		TheStairs
+			On the stairs is a long dead skeleton. In the skeleton's hand is a sword. If the player picks up the sword it glows and feels warm in the players hands. At the end of the stairs there is a door with a small hole in the same shape of the sapphire. The player must place the sapphire in the hole. 
+		TheDeep
+			Beyond the door is a rip in the world and Hell is leaking in. There is a demon waiting for the door to be open. If the player picked up the magic sword from the dead fighter you are able to fight the demon and wound him. If not he will kill the player summarily. If the player wins they find another map that had been sitting on the ground point towards another adventure. 
