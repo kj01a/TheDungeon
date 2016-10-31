@@ -30,7 +30,7 @@ class Engine(object):
 
 class TheBeginning(Scene):
 	def enter(self):
-		print("WELCOME TO THE DUNGEON\n")
+		print("WELCOME TO THE DUNGEON\nv1.0\n")
 		print("-----") * 5
 		print("\nWhen you were a child you found an old map in the attic of your father's house, tucked")
 		print("away in small chest that hadn't been touched in years. And you didn't think much of it")
@@ -56,6 +56,7 @@ class TheBeginning(Scene):
 			print("\nYou feel the fear crawl back up your thorat, but you swallow it back down. Your hands")
 			print("shake, and you grasp your father's sword and your torch. You ease down onto the first")
 			print("step and begin your descent into the dark.")
+			
 			return "corridor"
 		elif choice == "2":
 			print("\n" + "-----" * 5)
@@ -74,9 +75,11 @@ class TheBeginning(Scene):
 			print("awhile you think maybe you'll get back down there one day and finally check it out, but")
 			print("something always comes up, a sick kid, a trip Araella wants to take. You never make it,")
 			print("and die of old age.")
+			
 			return "death"
 		else:
 			print("That is not an option here.")
+			
 			return "start"
 		
 class Death(Scene):
@@ -93,6 +96,12 @@ class Death(Scene):
 		print("-----") * 5
 		print("\n\t1. Try again?")
 		print("\t2. Exit?")
+		
+		global have_gem
+		global have_sword
+		
+		have_gem = False
+		have_sword = False
 		
 		choice = raw_input("> ")
 		
@@ -120,6 +129,7 @@ class CentralCorridor(Scene):
 			print("was magically sealed, but those spells have been blown open. The door is in splinters")
 			print("on the floor.")
 			print("\nYou enter the room.") 
+			
 			return "study"
 		elif choice == "2":
 			print("\n" + "-----" * 5)
@@ -136,6 +146,7 @@ class CentralCorridor(Scene):
 			print("\nYou lie on the ground fading in and out of consciousness as delirium overtakes your")
 			print("your mind. Every time you try to move crippling pain rips from your twiching leg.")
 			print("Eventually you give up trying to get out, and you die of thirst.")
+			
 			return "death"
 		else:
 			print("That is not an option here")
@@ -147,6 +158,16 @@ class WizardsStudy(Scene):
 		print("of the room. It is defintely a study, but you still don't understand why it was put")
 		print("in the dungeon. You think it might do to investigate further, if only to only to quell")
 		print("the unease creeping up your spine.")
+		print("\nThe books are anicent tomes, most of them you are hesitant to touch lest they crumble")
+		print("under your fingers. Reams of parchment look like schloraly artices lay scattarted")
+		print("around, each one heavily annotated. Burnt out candles are stuck in candle holders with")
+		print("mountains of wax piled beneath them. The only parts of the room not coverend in dust")
+		print("cobwebs or wax are those with rat foot prints.")
+		print("\nYou take a look at the piles of papers on the center of the desk. Most of them seem")
+		print("to be writings on extremly high level magic. Interdimensional time travel or some such.")
+		print("None of it really makes much sense to you, but you do understand one aspect. 'Travel")
+		print("doors' as they are called, required keys to be opened, and the key needs to be kept")
+		print("close to the door.")
 		print("\nWhat do you do?")
 		print("\t1. Leave and go down the corridor?")
 		print("\t2. Search the room?")
@@ -162,7 +183,7 @@ class WizardsStudy(Scene):
 			print("closer. And closer. And then you see two beady eyes appear just outside the light of")
 			print("your torch. A rat is running toward you, almost like it is targeting you.")
 			print("\nYou draw your father's sword. The rat leaps at your chest, and you swing, cutting it in")
-			print("half. A putrid smell emanates from the dead rat, almost as if it had been dead for")
+			print("half. A putrid smell emanates from the rat, almost as if it had been dead for")
 			print("weeks.")
 			print("\nYou continue down the stairs.")
 
@@ -172,22 +193,15 @@ class WizardsStudy(Scene):
 			have_gem = True
 			
 			print("\n" + "-----" * 5)
-			print("The books are anicent tomes, most of them you are hesitant to touch lest they crumble")
-			print("under your fingers. Reams of parchment look like schloraly artices lay scattarted")
-			print("around, each one heavily annotated. Burnt out candles are stuck in candle holders with")
-			print("mountains of wax piled beneath them. The only parts of the room not coverend in dust")
-			print("cobwebs or wax are those with rat foot prints.")
-			print("\nYou take a look at the piles of papers on the center of the desk. Most of them seem")
-			print("to be writings on extremly high level magic. Interdimensional time travel or some such.")
-			print("None of it really makes much sense to you, but you do understand one aspect. 'Travel")
-			print("doors' as they are called, required keys to be opened, and the key needs to be kept")
-			print("close to the door. You figure this must be why the study is in a dungeon. There is some")
+			print("You figure this must be why the study is in a dungeon. There is some")
 			print("kind of magic door way down here. You wonder if the key is still here.")
 			print("\nYou search every nook and cranny of the room, and eventually you find a box, hidden")
 			print("in some false bottom in one of the shelves. The box is enscribed with all manner of")
 			print("glyphs that you think might have been magical warding keeping the box closed. It clearly")
 			print("didn't work, because the box looks like something ripped it open with its teeth.")
-			 
+			print("\nInside is a small, teardrop-shaped gem. It's got a teal tint to it and it is glowing.")
+			print("This must be a key all of the writings were talking about.")
+			print("\nYou take it, and head towards the other end of the corridor.")
 			
 			return "stairs"
 		else:
@@ -198,7 +212,20 @@ class WizardsStudy(Scene):
 class TheStairs(Scene):
 	#Choosing to take the magic sword from the skeleton.
 	def enter(self):
-		print("sword in the hand")
+		print("In the darkness, you can't tell how long the corridor goes on for, and your perception")
+		print("of time seems as drprived as your vision. Yet you continue to walk, along each side of")
+		print("you are jail cells filled with corpses long done rotting. You keep your gaze straight")
+		print("ahead, trying not to look at them, and eventually you come to the end of the corridor.")
+		print("\nYou think maybe the darkness is playing tricks on your eyes when you see a staircase")
+		print("once again heading down. But that is exactly what it is. Even after travelling all that")
+		print("way down from the surface, whoever built this dungeon dug deeper into the earth.")
+		print("\nWalking down the stairs, you go far enough to get away from the stench of death that")
+		print("permeated the dungeon above. The air down here smells clearer but heavier. Looking at")
+		print("walls you realize they've been charred black by a fire hot enough to melt the stone. You")
+		print("come to the end of the stiarcase and at the bottom a black skeleton, more ash now than")
+		print("bone. It looks as though he was once a warrior. A warrior who was fleeing for his life,")
+		print("and cooked in his armor as it melted around him. The only thing untouched is the sword in")
+		print("his hands.")
 		print("\nWhat do you do?")
 		print("\t1. Continue down the down the stair.")
 		print("\t2. Take the sword.")
@@ -206,13 +233,18 @@ class TheStairs(Scene):
 		choice = raw_input("> ")
 	
 		if choice == "1":
-			print("You leave the body and continue down.")
+			print("\n" + "-----" * 5)
+			print("\nYou leave the body and continue down, deciding to let the man rest with the last possesion")
+			print("he has left.")
 			return "door"
 		elif choice == "2":
 			global have_sword
 			have_sword = True
-			print("You pry the sword out of the bones. It feels warm and light in your hands. You give it")
-			print("a few swings and are suprised by the crispness of the blade.\n")
+			
+			print("\n" + "-----" * 5)
+			print("\nYou pry the sword out of the bones. It feels warm and light in your hands. You give it")
+			print("a few swings and are suprised by the crispness of the blade. You figure two blades are")
+			print("better than one, and you decide to keep your father's sword as a backup")
 			print("You continue down.")
 			return "door"
 		else:
@@ -223,19 +255,29 @@ class TheStairs(Scene):
 class TheDoor(Scene):
 	#If you have the gem the door opens, if you don't the door does not open and you have to go back.
 	def enter(self):
-		print "Door with the gem"
+		print("The staircase ends at a door way. There are multiple glowing blue sigils carved into")
+		print("it. You try to open the door, but it does not budge. It must be sealed by magic.")
 		print("\nWhat do you do?")
-		print("\t1. Examine door.")
+		print("\t1. Examine door more closely.")
 		print("\t2. Go back up the stairs.")
 		
 		choice = raw_input("> ")
 		
 		if choice == "1":
+			print("\n" + "-----" * 5)
+			print("\nYou go over the sigils, tracing your hand along each one. You find a teardrop-shaped")
+			print("hole at the bottom of the door.")
 			if have_gem:
-				print("put in gem! door open!")
+				print("\n" + "-----" * 5)
+				print("\nYou place the gem in the hole, and it fits perfectly. As soon as you press in you feel")
+				print("pressue release and air rushes out from the other side of the door. It swings open,")
+				print("almost knocking you off your feet. The wind blows out your torch and you are plunged")
+				print("into complete black.")
+				
 				return "deep"
 			else:
-				print "must go back!"
+				print("\n" + "-----" * 5)
+				print("\nYou realize must be the Travel Door, and the teardrop hole is for the key.") 
 				print("\nWhat do you do?")
 				print("\t1. Go back to the Study?")
 				print("\t2. Go home.")
@@ -243,18 +285,29 @@ class TheDoor(Scene):
 				choice = raw_input("> ")
 			
 				if choice == "1":
-					print "back to study"
 					return "study"
 				elif choice == "2":
-					print "boring life"
+					print("\n" + "-----" * 5)
+					print("\nYour mind races with what kind of horrors must be beyond this door. It would probably")
+					print("be better if you had some kind of armor, or a sheild, or something. You don't even know")
+					print("how to use a sword, not really. It was stupid to come down here so unprepared. You need")
+					print("go back, get your bearings. Just get the hell out of here...")
+					print("\nYou go back, decide to learn to fight abit. You tell youself you are going to go back,")
+					print("and finally face what is behind that door. But you don't.")
+					print("You live a happy, quiet life. You marry the girl of your dreams, you have kids and a little")
+					print("farm. And you realize there is nothing wrong with that. Except every so often get this")
+					print("nagging feeling in the back of your mind. A feeling that maybe there is something greater")
+					print("than happiness. About once a year you go into the attic while your wife and kids are out,")
+					print("and you look at your old map, dreaming of what could have been.")
+					
 					return "death"
 				else:
 					print("That is not an option here.")
-					return "stairs"
+					return "door"
 				
 		elif choice == "2":
-			print "must go back!"
-			print("\nWhat do you do?")
+			print("\n" + "-----" * 5)
+			print("\nWhich way do you go?")
 			print("\t1. Go back to the Study?")
 			print("\t2. Go home.")
 			
@@ -263,11 +316,23 @@ class TheDoor(Scene):
 			if choice == "1":
 				return "study"
 			elif choice == "2":
-				print "boring life"
+				print("\n" + "-----" * 5)
+				print("\nYour mind races with what kind of horrors must be beyond this door. It would probably")
+				print("be better if you had some kind of armor, or a sheild, or something. You don't even know")
+				print("how to use a sword, not really. It was stupid to come down here so unprepared. You need")
+				print("go back, get your bearings. Just get the hell out of here...")
+				print("\nYou go back, decide to learn to fight abit. You tell youself you are going to go back,")
+				print("and finally face what is behind that door. But you don't.")
+				print("You live a happy, quiet life. You marry the girl of your dreams, you have kids and a little")
+				print("farm. And you realize there is nothing wrong with that. Except every so often get this")
+				print("nagging feeling in the back of your mind. A feeling that maybe there is something greater")
+				print("than happiness. About once a year you go into the attic while your wife and kids are out,")
+				print("and you look at your old map, dreaming of what could have been.")
+				
 				return "death"
 			else:
 				print("That is not an option here")
-				return "stairs"
+				return "door"
 		else:
 			print("That is not an option here.")
 			return "door"
@@ -275,7 +340,15 @@ class TheDoor(Scene):
 		
 class TheDeep(Scene):
 	def enter(self):
-		print "fighta demon"
+		print("In the darkness, you can make out a shape that somehow is more black than the darkness")
+		print("already around you. It looks like some kind of hole. And out of the hole there is ")
+		print("pouring some kind of grey mass, and it is growling.")
+		print("\nThe sword in your hand comes to life. It shines a brillance, lighting up the room,")
+		print("except for the hole behind this thing. It starts to take form. It morphs into what looks")
+		print("like a man with grey skin, except it has grey skin and is eight feet tall with four foot")
+		print("tall antlers growing from its head. When it sees you, it smiles.")
+		print("\nIt's a demon. You don't know how you know that, but you do. Your breath come hard into")
+		print("your lungs.")
 		print("\nWhat do you do?")
 		print("\t1. Run for you life!")
 		print("\t2. Stand and fight!")
@@ -283,23 +356,60 @@ class TheDeep(Scene):
 		choice = raw_input("> ")
 		
 		if choice == "1":
-			print "you dead"
+			print("\n" + "-----" * 5)
+			print("\nThere is no getting out of this alive. You drop your sword and your unlit torch, and")
+			print("you run for the stairs. You make it farther than the warrior before you feel the flames")
+			print("licking your heals. You scream for as long as your lungs and throat exist. You whither")
+			print("in pain as the last seconds of your life feel like an eterntiy. The last things your")
+			print("eyes see are the flames engulfing you, and they almost look beautiful.")
+			
 			return "death"
-		elif choice == "2" and have_sword:
+		elif choice == "2":
 			if have_sword:
-				print "demon ded"
+				print("You grip your new sword as tight as you can. There wont be any running away from this.")
+				print("You are already dead, so you might as well go out fighting. 'Come on, then!' you scream")
+				print("at this abmomination, and it bolts at you, faster than anything should move.")
+				print("\nIt feels like your hand moves on its own. The sword know where to go, you trust it, and")
+				print("it strikes. It sinks deep into its chest, where its heart would be if this thing has")
+				print("one. The demon's mouth grows wide in shock. It screams out like it's never felt pain")
+				print("before.")
+				print("\nIn its death throes it lashes out and scratches across your chest. It's not a deep wound")
+				print("but it burns as if you've splashed with hot tar. The pain causes you to pass out.")
+				
 				return "end"
 			else:
-				print "dad sword no affect"
+				print("\n" + "-----" * 5)
+				print("\nYou draw your father's sword. You've come this far and you're not going to let some God")
+				print("forsaken abomination stop you now. You charge. Deep down you find courage you never knew")
+				print("you had, and you bring your sword to bear in the demon's gut. It glances off its skin")
+				print("without a scratch.")
+				print("\nThe demon laughs and grips your head in the palm of your head, lighting you ablaze. You")
+				print("are dead before you feel anything.")
+				
 				return "death"			
 		else:
-			print "hesitate"
+			print("\n" + "-----" * 5)
+			print("\nYou do nothing. The demon moves faster than should be possible, and before you can think")
+			print("its hands are embedded in your chest cavity, and it rips apart your rib cage. You watch")
+			print("you organs spill out onto the floor of the dungeon, wondering why you can't feel anything.")
+			
 			return "death"
 		
 class End(Scene):
 	def enter(self):
-		print "onward to adventure!"
-		raw_input("")
+		print("You awake. Your chest feels like it is splitting open. You open your shirt and three")
+		print("cauterized slash wounds down your abdomen. You struggle to move, but eventually make it")
+		print("to your feet.")
+		print("\nYou make it over to the black rift. It's like it's cutting through reality itself. You")
+		print("through the rift and you can see small points of light. Concentrating you can actually")
+		print("make out what they are. They are other Travel Doors. It looks like there are hundreds of")
+		print("them around the world, some of them opening into dungeons like this one and other just")
+		print("hanging in open air.")
+		print("\nThe Door in front of you begins to close. You take a deep breath and say, 'I guess I got")
+		print("work to do.'")
+		print("\n" + "-----" * 5 + "\n")
+		
+		raw_input("The End.")
 		exit(1)
 		
 class Map(object):
