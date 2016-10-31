@@ -30,7 +30,7 @@ class Engine(object):
 
 class TheBeginning(Scene):
 	def enter(self):
-		print("\nWELCOME TO THE DUNGEON\n")
+		print("WELCOME TO THE DUNGEON\n")
 		print("-----") * 5
 		print("\nWhen you were a child you found an old map in the attic of your father's house, tucked")
 		print("away in small chest that hadn't been touched in years. And you didn't think much of it")
@@ -48,19 +48,32 @@ class TheBeginning(Scene):
 		print("\nWhat do you do?")
 		print("\t1. Enter the dungeon")
 		print("\t2. Go back into town for more supplies?")
-		
-		loop = True
+
 		choice = raw_input("> ")
 
 		if choice == "1":
-			loop = False
-			print "dive into dungeon"
+			print("\n" + "-----" * 5)
+			print("\nYou feel the fear crawl back up your thorat, but you swallow it back down. Your hands")
+			print("shake, and you grasp your father's sword and your torch. You ease down onto the first")
+			print("step and begin your descent into the dark.")
 			return "corridor"
 		elif choice == "2":
-			loop = False
+			print("\n" + "-----" * 5)
 			print("\nYou realize you have forgotten some supplies that might be useful, and you decide to")
 			print("head back into town. It would not do to dive into an unknown dungeon uprepared. While in")
 			print("town see Araella, the girl you've had a crush on for quite some time.")
+			print("\nShe smiles when she sees you. She walks over and strikes up a conversation about her")
+			print("day and her work in the flower shop. Then she tells you that her and a couple of friends")
+			print("are going to spend the day up the mountain, have a picnic and just hangout. She invites")
+			print("you to come along, and the dungeon is forgotten for today.")
+			print("\nYou hit is off! She's beautiful and funny, and you like her a lot. You're pretty sure")
+			print("she feels the same way when she invites you out again tomorrow, just the two of you.")
+			print("Everything seems to go naturally from there. You fall in love and get married. You have")
+			print("your ups and downs, and few kids along the way. All in all a happy life. Except for the")
+			print("nagging feeling you get everytime you look at your father's old map. Every once in")
+			print("awhile you think maybe you'll get back down there one day and finally check it out, but")
+			print("something always comes up, a sick kid, a trip Araella wants to take. You never make it,")
+			print("and die of old age.")
 			return "death"
 		else:
 			print("That is not an option here.")
@@ -68,7 +81,15 @@ class TheBeginning(Scene):
 		
 class Death(Scene):
 	def enter(self):
-		print "ded\n"
+		print("You wake up on a dock. The sky above you is a shimmering white and the water sparkles")
+		print("blue. There is a single ship in the harbor, and one of it's life boats is rowing")
+		print("towards the dock. There is an old man with a grey beard standing on the dock in front")
+		print("you. His thick bear skin cloak blows in the saltly smelling breeze.")
+		print("\n'Yes', he says. 'Everyone asks the same question first, and the answer is yes.' He")
+		print("claps his hand down on your shoulder. 'Did you make all of the desicions you wished")
+		print("you had?' He smiles and laughs, 'If it makes you feel any better, almost no one does.'")
+		print("\nThe lifeboat has made it to the dock, and the old man says, 'Well, it's time to go")
+		print("all the same.' And he ushers you into the boat.")
 		print("-----") * 5
 		print("\n\t1. Try again?")
 		print("\t2. Exit?")
@@ -82,7 +103,10 @@ class Death(Scene):
 
 class CentralCorridor(Scene):
 	def enter(self):
-		print "test corrior"
+		print("When you reach the bottom of the stairs not even the light of your torch penetrates")
+		print("the darkness enough to see anything. You check your map, and there are two options in")
+		print("before. One you can enter the room immideately ahead of you marked 'Study,' or go")
+		print("the corridor towards the prisoner cells.")
 		print("\nWhat do you do?")
 		print("\t1. Go forward, through the door?")
 		print("\t2. Go left, down the hall?")
@@ -90,10 +114,28 @@ class CentralCorridor(Scene):
 		choice = raw_input("> ")
 		
 		if choice == "1":
-			print "into study"
+			print("\n" + "-----" * 5)
+			print("\nYou find it odd that there would there would be a study in a dungeon, and decide to")
+			print("check it out. You find your way to the doorway, and it looks like at one time the room")
+			print("was magically sealed, but those spells have been blown open. The door is in splinters")
+			print("on the floor.")
+			print("\nYou enter the room.") 
 			return "study"
 		elif choice == "2":
-			print "the stuff about rats"
+			print("\n" + "-----" * 5)
+			print("\nYou walk down the corridor. The cells are abandoned, except for the decayed remains")
+			print("of the long forgotten residents of the dungeon. The smell is almost overwhelming, but")
+			print("you press on.")
+			print("\nYou get far enough down the hall that you can no longer see the stairs, and you start")
+			print("to hear scratching on the stone in front of you. You stop, and the scratching gets")
+			print("closer. And closer. And then you see two beady eyes appear just outside the light of")
+			print("your torch. A rat is running toward you, almost like it is targeting you.")
+			print("\nYou draw your father's sword, and swing at the rat. You miss. It jumps and sinks its")
+			print("teeth into your leg. A burning sensation rips through your leg, you throw your torch to")
+			print("the ground, and everything goes black.")
+			print("\nYou lie on the ground fading in and out of consciousness as delirium overtakes your")
+			print("your mind. Every time you try to move crippling pain rips from your twiching leg.")
+			print("Eventually you give up trying to get out, and you die of thirst.")
 			return "death"
 		else:
 			print("That is not an option here")
@@ -101,7 +143,10 @@ class CentralCorridor(Scene):
 		
 class WizardsStudy(Scene):
 	def enter(self):
-		print "Wizzer"
+		print("Dusty books and baubles litter the shelves along the wall and the desk in the middle")
+		print("of the room. It is defintely a study, but you still don't understand why it was put")
+		print("in the dungeon. You think it might do to investigate further, if only to only to quell")
+		print("the unease creeping up your spine.")
 		print("\nWhat do you do?")
 		print("\t1. Leave and go down the corridor?")
 		print("\t2. Search the room?")
@@ -109,13 +154,40 @@ class WizardsStudy(Scene):
 		choice = raw_input("> ")
 		
 		if choice == "1":
-			print "hallway stuff no rats"
+			print("\n" + "-----" * 5)
+			print("\nYou are here to explore a dungeon, not read books. You walk down the corridor. The")
+			print("cells are abandoned, except for the decayed remains of the long forgotten residents")
+			print("of the dungeon. The smell is almost overwhelming, but you press on. You continue")
+			print("until you hear what sounds like scratching on stone, and you stop. The scratching gets")
+			print("closer. And closer. And then you see two beady eyes appear just outside the light of")
+			print("your torch. A rat is running toward you, almost like it is targeting you.")
+			print("\nYou draw your father's sword. The rat leaps at your chest, and you swing, cutting it in")
+			print("half. A putrid smell emanates from the dead rat, almost as if it had been dead for")
+			print("weeks.")
+			print("\nYou continue down the stairs.")
+
 			return "stairs"
 		elif choice == "2":
 			global have_gem
 			have_gem = True
 			
-			print "grabba gem"
+			print("\n" + "-----" * 5)
+			print("The books are anicent tomes, most of them you are hesitant to touch lest they crumble")
+			print("under your fingers. Reams of parchment look like schloraly artices lay scattarted")
+			print("around, each one heavily annotated. Burnt out candles are stuck in candle holders with")
+			print("mountains of wax piled beneath them. The only parts of the room not coverend in dust")
+			print("cobwebs or wax are those with rat foot prints.")
+			print("\nYou take a look at the piles of papers on the center of the desk. Most of them seem")
+			print("to be writings on extremly high level magic. Interdimensional time travel or some such.")
+			print("None of it really makes much sense to you, but you do understand one aspect. 'Travel")
+			print("doors' as they are called, required keys to be opened, and the key needs to be kept")
+			print("close to the door. You figure this must be why the study is in a dungeon. There is some")
+			print("kind of magic door way down here. You wonder if the key is still here.")
+			print("\nYou search every nook and cranny of the room, and eventually you find a box, hidden")
+			print("in some false bottom in one of the shelves. The box is enscribed with all manner of")
+			print("glyphs that you think might have been magical warding keeping the box closed. It clearly")
+			print("didn't work, because the box looks like something ripped it open with its teeth.")
+			 
 			
 			return "stairs"
 		else:
